@@ -264,21 +264,7 @@ export default function ContactSection() {
               ))}
             </div>
 
-            {/* Image Card */}
-            <ElegantCard className="bg-white/5 backdrop-blur-md border-white/10 overflow-hidden">
-              <div className="relative">
-                <img 
-                  src={constructionImage}
-                  alt="Construction Site"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h4 className="text-white font-bold text-lg mb-2">Quality Construction</h4>
-                  <p className="text-white/80 text-sm">Experience the difference with Estarra's premium construction services.</p>
-                </div>
-              </div>
-            </ElegantCard>
+
 
             {/* Why Choose Us */}
             <ElegantCard className="bg-white/5 backdrop-blur-md border-white/10">
