@@ -91,13 +91,24 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-            Ready to <span className="text-transparent bg-clip-text estarra-gradient">Start Building?</span>
+    <section id="contact" className="py-24 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-32 left-16 w-28 h-28 bg-purple-200/20 rounded-full blur-xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-20 w-36 h-36 bg-pink-200/15 rounded-full blur-2xl animate-float"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4">
+            <span className="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
+              Get In Touch
+            </span>
+          </div>
+          <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 animate-slide-up">
+            Ready to <span className="text-gradient">Start Building?</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Contact us today for a free consultation and quote. Let's turn your construction dreams into reality.
           </p>
         </div>
@@ -144,35 +155,38 @@ export default function ContactSection() {
             </Card>
             
             {/* Quick Action Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 animate-scale-in" style={{ animationDelay: '0.4s' }}>
               <Button 
                 onClick={() => handleQuickAction("whatsapp")}
-                className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-xl font-semibold flex items-center justify-center hover:scale-105 transition-transform"
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-5 rounded-2xl font-bold flex items-center justify-center hover:scale-110 transition-all glow-effect hover:shadow-green-500/50 shadow-lg relative overflow-hidden group"
               >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                WhatsApp
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <MessageSquare className="w-5 h-5 mr-2 relative z-10" />
+                <span className="relative z-10">WhatsApp</span>
               </Button>
               <Button 
                 onClick={() => handleQuickAction("visit")}
-                className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-xl font-semibold flex items-center justify-center hover:scale-105 transition-transform"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-5 rounded-2xl font-bold flex items-center justify-center hover:scale-110 transition-all glow-effect hover:shadow-blue-500/50 shadow-lg relative overflow-hidden group"
               >
-                <Calendar className="w-5 h-5 mr-2" />
-                Schedule Visit
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <Calendar className="w-5 h-5 mr-2 relative z-10" />
+                <span className="relative z-10">Schedule Visit</span>
               </Button>
               <Button 
                 onClick={() => handleQuickAction("callback")}
-                className="bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-xl font-semibold flex items-center justify-center hover:scale-105 transition-transform"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white p-5 rounded-2xl font-bold flex items-center justify-center hover:scale-110 transition-all glow-effect hover:shadow-orange-500/50 shadow-lg relative overflow-hidden group"
               >
-                <PhoneCall className="w-5 h-5 mr-2" />
-                Call Back
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <PhoneCall className="w-5 h-5 mr-2 relative z-10" />
+                <span className="relative z-10">Call Back</span>
               </Button>
             </div>
           </div>
           
           {/* Contact Form */}
-          <Card>
+          <Card className="animate-scale-in shadow-2xl border-0 bg-white/90 backdrop-blur-sm glow-effect hover:shadow-purple-500/20" style={{ animationDelay: '0.6s' }}>
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-gradient">Send us a Message</h3>
               
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -279,10 +293,11 @@ export default function ContactSection() {
                   <Button 
                     type="submit" 
                     disabled={contactMutation.isPending}
-                    className="w-full estarra-gradient text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform"
+                    className="w-full estarra-gradient text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all glow-effect shadow-xl hover:shadow-purple-500/50 relative overflow-hidden group"
                   >
-                    {contactMutation.isPending ? "Sending..." : "Send Message"}
-                    <MessageSquare className="w-5 h-5 ml-2" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    <span className="relative z-10">{contactMutation.isPending ? "Sending..." : "Send Message"}</span>
+                    <MessageSquare className="w-5 h-5 ml-2 relative z-10" />
                   </Button>
                 </form>
               </Form>

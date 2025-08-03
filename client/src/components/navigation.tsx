@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
+import estarraLogo from "@assets/Estarra Logo-01_1754243821976.jpg";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,14 +19,21 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <nav className="fixed w-full top-0 z-50 glass-effect backdrop-blur-xl border-b border-purple-200/30 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center">
-            <div className="text-2xl font-black text-transparent bg-clip-text estarra-gradient">
-              ESTARRA
+          <div className="flex items-center group">
+            <img 
+              src={estarraLogo} 
+              alt="Estarra Logo" 
+              className="w-10 h-10 rounded-lg mr-3 shadow-md transition-transform group-hover:scale-110 object-cover"
+            />
+            <div>
+              <div className="text-2xl font-black text-gradient drop-shadow-sm">
+                ESTARRA
+              </div>
+              <div className="text-xs text-purple-600 font-medium -mt-1">Shine higher</div>
             </div>
-            <div className="ml-2 text-sm text-purple-600 font-medium">Shine higher</div>
           </div>
           
           <div className="hidden md:flex space-x-8">
@@ -71,7 +79,7 @@ export default function Navigation() {
             </a>
             <Button 
               onClick={handleGetQuote}
-              className="estarra-gradient text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform"
+              className="estarra-gradient text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transition-all glow-effect hover:shadow-purple-500/50 shadow-lg"
             >
               Get Quote
             </Button>
