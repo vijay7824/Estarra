@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
 import estarraLogo from "@assets/Estarra Logo-01_1754243821976.jpg";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -19,9 +29,15 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed w-full top-0 z-50 glass-effect backdrop-blur-xl border-b border-purple-200/30 shadow-lg">
+    <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+      isScrolled 
+        ? 'glass-effect backdrop-blur-xl border-b border-purple-200/30 shadow-xl py-2' 
+        : 'bg-transparent py-4'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className={`flex justify-between items-center transition-all duration-300 ${
+          isScrolled ? 'h-16' : 'h-20'
+        }`}>
           <div className="flex items-center group">
             <img 
               src={estarraLogo} 

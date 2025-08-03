@@ -1,4 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
+import { ElegantCard } from "@/components/ui/elegant-card";
+import { AnimatedSection } from "@/components/ui/animated-section";
 import { Home, Building, Key, Wrench, Paintbrush, ClipboardList } from "lucide-react";
 
 const services = [
@@ -45,48 +47,49 @@ export default function ServicesSection() {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
+        <AnimatedSection animation="slideUp" className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-semibold">
               Our Expertise
             </span>
           </div>
-          <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 animate-slide-up">
+          <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
             Our <span className="text-gradient">Premium</span> Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive construction solutions tailored to bring your vision to life with unmatched quality and precision.
           </p>
-        </div>
+        </AnimatedSection>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card 
+            <AnimatedSection 
               key={index}
-              className="group hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm glow-effect hover:shadow-purple-500/25 animate-scale-in relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              animation="scaleIn"
+              delay={index * 100}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <CardContent className="p-8 relative z-10">
-                <div className="w-20 h-20 estarra-gradient rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <service.icon className="w-10 h-10 text-white drop-shadow-sm" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                <div className="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
-                  <span>Learn More</span>
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
-                </div>
-                
-                {/* Hover effect overlay */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-200/20 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </CardContent>
-            </Card>
+              <ElegantCard className="h-full">
+                <CardContent className="p-8 relative z-10">
+                  <div className="w-20 h-20 estarra-gradient rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+                    <service.icon className="w-10 h-10 text-white drop-shadow-sm" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors">{service.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <div className="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                    <span>Learn More</span>
+                    <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-200/20 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </CardContent>
+              </ElegantCard>
+            </AnimatedSection>
           ))}
         </div>
         
         {/* Call to action */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+        <AnimatedSection animation="fadeIn" delay={800} className="text-center mt-16">
           <div className="glass-effect rounded-2xl p-8 inline-block border border-purple-200/30">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h3>
             <p className="text-gray-600 mb-6">Get a free consultation and quote for your construction needs.</p>
@@ -97,7 +100,7 @@ export default function ServicesSection() {
               Get Free Quote
             </button>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

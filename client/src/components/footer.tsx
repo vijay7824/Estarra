@@ -1,154 +1,185 @@
-import { Facebook, Instagram, MessageSquare, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import estarraLogo from "@assets/Estarra Logo-01_1754243821976.jpg";
 
 export default function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const services = [
+    "Residential Construction",
+    "Commercial Buildings",
+    "Turnkey Projects",
+    "Renovation & Restoration",
+    "Interior Design",
+    "Project Management"
+  ];
+
+  const quickLinks = [
+    { name: "Home", href: "#hero" },
+    { name: "Services", href: "#services" },
+    { name: "Projects", href: "#projects" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" }
+  ];
+
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-purple-900 text-white py-20 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-purple-500 rounded-full blur-2xl animate-pulse-slow"></div>
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-pink-500 rounded-full blur-xl animate-float"></div>
-        </div>
+    <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239333ea' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-4 gap-8">
+        {/* Main Footer Content */}
+        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="md:col-span-2">
-            <div className="flex items-center mb-6 group">
-              <div className="w-12 h-12 estarra-gradient rounded-xl mr-4 shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center">
-                <span className="text-white font-black text-xl">E</span>
-              </div>
+          <div className="lg:col-span-1 space-y-6">
+            <div className="flex items-center gap-3">
+              <img 
+                src={estarraLogo} 
+                alt="Estarra Logo" 
+                className="w-12 h-12 rounded-xl shadow-lg"
+              />
               <div>
-                <div className="text-3xl font-black text-gradient drop-shadow-sm">
-                  ESTARRA
-                </div>
-                <div className="text-sm text-purple-300 font-medium -mt-1">Shine higher</div>
+                <h3 className="text-xl font-bold">Estarra</h3>
+                <p className="text-purple-300 text-sm font-semibold">Shine Higher</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-8 max-w-md leading-relaxed text-lg">
-              Building dreams with excellence for over 15 years. Your trusted partner for all construction and civil engineering needs in Lucknow.
+            <p className="text-gray-300 leading-relaxed">
+              Building dreams with 15+ years of excellence in construction and engineering. From concept to completion, we deliver quality that lasts.
             </p>
-            <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="w-14 h-14 glass-effect rounded-2xl flex items-center justify-center hover:scale-110 transition-all border border-white/20 glow-effect hover:shadow-purple-500/50 group"
-              >
-                <Facebook className="w-6 h-6 group-hover:text-blue-300 transition-colors" />
-              </a>
-              <a 
-                href="#" 
-                className="w-14 h-14 glass-effect rounded-2xl flex items-center justify-center hover:scale-110 transition-all border border-white/20 glow-effect hover:shadow-pink-500/50 group"
-              >
-                <Instagram className="w-6 h-6 group-hover:text-pink-300 transition-colors" />
-              </a>
-              <a 
-                href="https://wa.me/917392861099" 
-                className="w-14 h-14 glass-effect rounded-2xl flex items-center justify-center hover:scale-110 transition-all border border-white/20 glow-effect hover:shadow-green-500/50 group"
-              >
-                <MessageSquare className="w-6 h-6 group-hover:text-green-300 transition-colors" />
-              </a>
-              <a 
-                href="#" 
-                className="w-14 h-14 glass-effect rounded-2xl flex items-center justify-center hover:scale-110 transition-all border border-white/20 glow-effect hover:shadow-blue-500/50 group"
-              >
-                <Linkedin className="w-6 h-6 group-hover:text-blue-300 transition-colors" />
-              </a>
+            <div className="text-sm text-gray-400">
+              <p className="font-semibold text-purple-300">Powered by Ishtika Engineers</p>
             </div>
           </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-400 hover:text-white transition-colors text-left"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="text-gray-400 hover:text-white transition-colors text-left"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('projects')}
-                  className="text-gray-400 hover:text-white transition-colors text-left"
-                >
-                  Projects
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-400 hover:text-white transition-colors text-left"
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-400 hover:text-white transition-colors text-left"
-                >
-                  Contact
-                </button>
-              </li>
+
+          {/* Services */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold text-white">Our Services</h4>
+            <ul className="space-y-3">
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a 
+                    href="#services" 
+                    className="text-gray-300 hover:text-purple-300 transition-colors text-sm hover:translate-x-1 inline-block duration-300"
+                  >
+                    {service}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
-          
+
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold text-white">Quick Links</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href}
+                    className="text-gray-300 hover:text-purple-300 transition-colors text-sm hover:translate-x-1 inline-block duration-300"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">Contact Info</h4>
-            <div className="space-y-3 text-gray-400">
-              <div className="flex items-center">
-                <span className="mr-3">📞</span>
-                <a href="tel:7392861099" className="hover:text-white transition-colors">
-                  7392861099
-                </a>
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold text-white">Get In Touch</h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                <div>
+                  <a 
+                    href="tel:+917392861099" 
+                    className="text-gray-300 hover:text-purple-300 transition-colors text-sm"
+                  >
+                    +91 7392861099
+                  </a>
+                  <p className="text-xs text-gray-500">Mon-Sat 9AM-7PM</p>
+                </div>
               </div>
-              <div className="flex items-center">
-                <span className="mr-3">✉️</span>
-                <a href="mailto:estarragroup@gmail.com" className="hover:text-white transition-colors">
-                  estarragroup@gmail.com
-                </a>
+              
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                <div>
+                  <a 
+                    href="mailto:estarragroup@gmail.com" 
+                    className="text-gray-300 hover:text-purple-300 transition-colors text-sm"
+                  >
+                    estarragroup@gmail.com
+                  </a>
+                  <p className="text-xs text-gray-500">24hr response time</p>
+                </div>
               </div>
-              <div className="flex items-start">
-                <span className="mr-3 mt-1">📍</span>
-                <span>Plot No. 115, Banshi Bihar<br />Azad Nagar, Lucknow</span>
+              
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                <div>
+                  <span className="text-gray-300 text-sm">Lucknow, Uttar Pradesh</span>
+                  <p className="text-xs text-gray-500">Visit by appointment</p>
+                </div>
               </div>
             </div>
+
+            <Button
+              onClick={() => {
+                const message = `Hi! I'm interested in Estarra's construction services. I'd like to discuss my project requirements.`;
+                window.open(`https://wa.me/917392861099?text=${encodeURIComponent(message)}`, '_blank');
+              }}
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full text-sm transition-all hover:scale-105"
+            >
+              WhatsApp Us
+            </Button>
           </div>
         </div>
-        
-        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 mb-4 md:mb-0">
-            © 2025 Estarra – Shine Higher
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+
+        {/* Bottom Footer */}
+        <div className="py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-center md:text-left">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} Estarra Group. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-xs mt-1">
+              Powered by Ishtika Engineers | Building Excellence Since 2008
+            </p>
           </div>
-          <div className="text-gray-400 mb-4 md:mb-0">
-            Powered by Ishtika Engineers
-          </div>
-          <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
+
+          <div className="flex items-center gap-4">
+            <div className="text-xs text-gray-500">
+              <span>Made with care in Lucknow</span>
+            </div>
+            <Button
+              onClick={scrollToTop}
+              size="sm"
+              className="bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full p-2 transition-all hover:scale-110 group"
+            >
+              <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-radial from-purple-600/10 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-radial from-purple-400/10 to-transparent"></div>
     </footer>
   );
 }
