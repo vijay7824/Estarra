@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
-import estarraLogo from "@assets/Estarra Logo-01_1754243821976.jpg";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,16 +38,11 @@ export default function Navigation() {
           isScrolled ? 'h-16' : 'h-20'
         }`}>
           <div className="flex items-center group">
-            <img 
-              src={estarraLogo} 
-              alt="Estarra Logo" 
-              className="w-10 h-10 rounded-lg mr-3 shadow-md transition-transform group-hover:scale-110 object-cover"
-            />
             <div>
               <div className="text-2xl font-black text-gradient drop-shadow-sm">
                 ESTARRA
               </div>
-              <div className="text-xs text-purple-600 font-medium -mt-1">Shine higher</div>
+              <div className="text-xs text-purple-600 font-medium">Shine higher</div>
             </div>
           </div>
           

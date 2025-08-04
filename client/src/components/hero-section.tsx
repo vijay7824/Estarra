@@ -37,16 +37,16 @@ export default function HeroSection() {
             </AnimatedSection>
             
             <AnimatedSection animation="slideUp" delay={200}>
-              <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight">
-                Building Your
+              <h1 className="text-4xl lg:text-5xl font-black text-white leading-normal">
+                Built on Dreams.
                 <span className="block text-gradient animate-pulse-slow">
-                  Dreams Higher
+                  Designed to Shine Higher
                 </span>
               </h1>
             </AnimatedSection>
             
             <AnimatedSection animation="slideUp" delay={400}>
-              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
+              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mt-6">
                 Transform your vision into reality with Estarra's premium construction services. From residential homes to commercial complexes, we deliver excellence that lasts.
               </p>
             </AnimatedSection>

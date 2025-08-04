@@ -1,0 +1,697 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estarra - Civil Engineering & Construction Services | Shine Higher</title>
+    <meta name="description" content="Professional civil engineering and construction services in Lucknow. 15+ years experience in residential, commercial, turnkey projects, and interior design.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'estarra-purple': '#8B3FBD',
+                        'estarra-light-purple': '#D946EF',
+                        'estarra-dark-purple': '#6B21A8',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'estarra-gradient': 'linear-gradient(135deg, #8B3FBD 0%, #D946EF 100%)',
+                        'hero-gradient': 'linear-gradient(135deg, rgba(139, 63, 189, 0.9) 0%, rgba(217, 70, 239, 0.9) 100%)',
+                    }
+                }
+            }
+        };
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(135deg, rgba(139, 63, 189, 0.9) 0%, rgba(217, 70, 239, 0.9) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 63, 189, 0.2);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #8B3FBD 0%, #D946EF 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 63, 189, 0.4);
+        }
+        
+        .contact-button {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-overlay {
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="font-inter">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIyOCIgZmlsbD0idXJsKCNncmFkaWVudCkiPkVTVEFSUkE8L3RleHQ+Cjx0ZXh0IHg9IjEwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOEIzRkJEIj5TaGluZSBoaWdoZXI8L3RleHQ+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4QjNGQkQ7c3RvcC1vcGFjaXR5OjEiIC8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I0Q5NDZFRjtzdG9wLW9wYWNpdHk6MSIgLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K" alt="Estarra Logo" class="h-12 w-auto">
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-estarra-purple font-medium transition-colors">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-estarra-purple font-medium transition-colors">Services</a>
+                    <a href="#projects" class="text-gray-700 hover:text-estarra-purple font-medium transition-colors">Projects</a>
+                    <a href="#about" class="text-gray-700 hover:text-estarra-purple font-medium transition-colors">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-estarra-purple font-medium transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="tel:7392861099" class="hidden sm:flex items-center text-estarra-purple font-semibold">
+                        <i class="fas fa-phone mr-2"></i>
+                        7392861099
+                    </a>
+                    <button class="cta-button text-white px-6 py-2 rounded-full font-semibold">
+                        Get Quote
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="animate-float">
+                        <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-tight">
+                            Build Your
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                                Dreams
+                            </span>
+                            Higher
+                        </h1>
+                    </div>
+                    
+                    <p class="text-xl lg:text-2xl mb-8 leading-relaxed opacity-90">
+                        Professional civil engineering and construction services with 15+ years of excellence. 
+                        From residential homes to commercial complexes, we make your vision reality.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <button class="cta-button text-white px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center">
+                            <i class="fas fa-hammer mr-3"></i>
+                            Start Your Project
+                        </button>
+                        <button class="border-2 border-white text-white hover:bg-white hover:text-estarra-purple px-8 py-4 rounded-full font-bold text-lg transition-all inline-flex items-center justify-center">
+                            <i class="fas fa-calendar-alt mr-3"></i>
+                            Schedule Visit
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-8 text-center">
+                        <div>
+                            <div class="text-3xl font-black mb-2">15+</div>
+                            <div class="text-sm opacity-90">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black mb-2">500+</div>
+                            <div class="text-sm opacity-90">Projects Completed</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black mb-2">100%</div>
+                            <div class="text-sm opacity-90">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Modern construction site with workers and equipment -->
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" 
+                         alt="Modern construction site with workers and equipment" 
+                         class="rounded-3xl shadow-2xl w-full animate-float" style="animation-delay: 1s;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Services Section -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    Our <span class="text-transparent bg-clip-text bg-estarra-gradient">Premium</span> Services
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive construction solutions tailored to bring your vision to life with unmatched quality and precision.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <div class="w-16 h-16 bg-estarra-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Residential Construction</h3>
+                    <p class="text-gray-600 mb-6">
+                        Custom homes designed and built to your exact specifications with premium materials and craftsmanship.
+                    </p>
+                    <div class="flex items-center text-estarra-purple font-semibold">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <div class="w-16 h-16 bg-estarra-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Commercial Buildings</h3>
+                    <p class="text-gray-600 mb-6">
+                        Professional commercial and institutional construction projects with modern design and functionality.
+                    </p>
+                    <div class="flex items-center text-estarra-purple font-semibold">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <div class="w-16 h-16 bg-estarra-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-key text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Turnkey Projects</h3>
+                    <p class="text-gray-600 mb-6">
+                        Complete project solutions from design to delivery, handling every aspect of your construction needs.
+                    </p>
+                    <div class="flex items-center text-estarra-purple font-semibold">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <div class="w-16 h-16 bg-estarra-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Renovation & Remodeling</h3>
+                    <p class="text-gray-600 mb-6">
+                        Transform existing spaces with innovative renovation and remodeling solutions that add value.
+                    </p>
+                    <div class="flex items-center text-estarra-purple font-semibold">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <div class="w-16 h-16 bg-estarra-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Interior Design</h3>
+                    <p class="text-gray-600 mb-6">
+                        Complete interior design and execution services to create beautiful, functional living spaces.
+                    </p>
+                    <div class="flex items-center text-estarra-purple font-semibold">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <div class="w-16 h-16 bg-estarra-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-clipboard-list text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Project Management</h3>
+                    <p class="text-gray-600 mb-6">
+                        Professional project management and consulting services to ensure timely and quality delivery.
+                    </p>
+                    <div class="flex items-center text-estarra-purple font-semibold">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: Projects Gallery -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    Featured <span class="text-transparent bg-clip-text bg-estarra-gradient">Projects</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explore our portfolio of successfully completed projects that showcase our expertise and commitment to excellence.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card relative rounded-2xl overflow-hidden shadow-lg">
+                    <!-- Modern luxury residential building exterior -->
+                    <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                         alt="Modern luxury residential building exterior" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-estarra-purple/90 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Luxury Villa Project</h3>
+                            <p class="text-sm opacity-90">Premium residential construction in Lucknow</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card relative rounded-2xl overflow-hidden shadow-lg">
+                    <!-- Modern commercial office building with glass facade -->
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                         alt="Modern commercial office building with glass facade" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-estarra-purple/90 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Corporate Office Complex</h3>
+                            <p class="text-sm opacity-90">Commercial building construction</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card relative rounded-2xl overflow-hidden shadow-lg">
+                    <!-- Modern apartment building complex -->
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                         alt="Modern apartment building complex" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-estarra-purple/90 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Residential Complex</h3>
+                            <p class="text-sm opacity-90">Multi-story residential development</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card relative rounded-2xl overflow-hidden shadow-lg">
+                    <!-- Modern interior design living room -->
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                         alt="Modern interior design living room" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-estarra-purple/90 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Interior Design Project</h3>
+                            <p class="text-sm opacity-90">Contemporary home interior</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card relative rounded-2xl overflow-hidden shadow-lg">
+                    <!-- Modern industrial building construction -->
+                    <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                         alt="Modern industrial building construction" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-estarra-purple/90 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Industrial Facility</h3>
+                            <p class="text-sm opacity-90">Institutional construction project</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card relative rounded-2xl overflow-hidden shadow-lg">
+                    <!-- Modern kitchen renovation before and after split view -->
+                    <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                         alt="Modern kitchen renovation before and after split view" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-estarra-purple/90 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Kitchen Renovation</h3>
+                            <p class="text-sm opacity-90">Complete home remodeling</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="cta-button text-white px-8 py-4 rounded-full font-bold text-lg">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Gallery -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-24 bg-gradient-to-br from-estarra-purple to-estarra-light-purple">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="text-4xl lg:text-5xl font-black mb-6">
+                        15+ Years of Building Excellence
+                    </h2>
+                    <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                        At Estarra, we don't just construct buildings; we craft dreams into reality. With over 15 years of expertise in civil engineering and construction, we have established ourselves as Lucknow's premier construction partner.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-lg">Licensed & Certified Engineers</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-lg">Quality Materials & Craftsmanship</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-lg">On-Time Project Delivery</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-lg">24/7 Customer Support</span>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-white text-estarra-purple px-8 py-4 rounded-full font-bold text-lg cta-button hover:shadow-2xl">
+                        Learn More About Us
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <!-- Professional construction team working on a building site -->
+                    <img src="https://pixabay.com/get/g7e39e2871363857625f77d134f302818744b31c7901c54daaf070a61521def26091bc14270cb58ac1bdbb7fa9cbe1ffa254bc09b95540eb27db835868e2610e7_1280.jpg" 
+                         alt="Professional construction team working on a building site" 
+                         class="rounded-3xl shadow-2xl w-full">
+                    <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-xl">
+                        <div class="text-estarra-purple text-3xl font-black">500+</div>
+                        <div class="text-gray-600 font-semibold">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    Ready to <span class="text-transparent bg-clip-text bg-estarra-gradient">Start Building?</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Contact us today for a free consultation and quote. Let's turn your construction dreams into reality.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-estarra-gradient rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Phone</div>
+                                    <a href="tel:7392861099" class="text-estarra-purple hover:underline">7392861099</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-estarra-gradient rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Email</div>
+                                    <a href="mailto:estarragroup@gmail.com" class="text-estarra-purple hover:underline">estarragroup@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-estarra-gradient rounded-xl flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Address</div>
+                                    <div class="text-gray-600">Plot No. 115, Banshi Bihar<br>Azad Nagar, Lucknow</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Action Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <button class="contact-button bg-green-500 hover:bg-green-600 text-white p-4 rounded-xl font-semibold flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                            WhatsApp
+                        </button>
+                        <button class="contact-button bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-xl font-semibold flex items-center justify-center">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Schedule Visit
+                        </button>
+                        <button class="contact-button bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-xl font-semibold flex items-center justify-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            Call Back
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                    
+                    <form class="space-y-6" data-mock="true">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-estarra-purple focus:border-transparent" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-estarra-purple focus:border-transparent" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-estarra-purple focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-estarra-purple focus:border-transparent" placeholder="+91 9876543210">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Service Interested In</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-estarra-purple focus:border-transparent">
+                                <option>Select a service</option>
+                                <option>Residential Construction</option>
+                                <option>Commercial Building</option>
+                                <option>Turnkey Projects</option>
+                                <option>Renovation & Remodeling</option>
+                                <option>Interior Design</option>
+                                <option>Project Management</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-estarra-purple focus:border-transparent" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full cta-button text-white py-4 rounded-xl font-bold text-lg">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIyOCIgZmlsbD0idXJsKCNncmFkaWVudCkiPkVTVEFSUkE8L3RleHQ+Cjx0ZXh0IHg9IjEwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOEIzRkJEIj5TaGluZSBoaWdoZXI8L3RleHQ+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4QjNGQkQ7c3RvcC1vcGFjaXR5OjEiIC8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I0Q5NDZFRjtzdG9wLW9wYWNpdHk6MSIgLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K" alt="Estarra Logo" class="h-12 w-auto mb-4">
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Building dreams with excellence for over 15 years. Your trusted partner for all construction and civil engineering needs in Lucknow.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-estarra-gradient rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-estarra-gradient rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-estarra-gradient rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-estarra-gradient rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>7392861099</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>estarragroup@gmail.com</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1"></i>
+                            <span>Plot No. 115, Banshi Bihar<br>Azad Nagar, Lucknow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    © 2025 Estarra – Shine Higher
+                </div>
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    Powered by Ishtika Engineers
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handler (placeholder)
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form submission logic
+                    alert('Thank you for your message! We will get back to you soon.');
+                });
+            }
+
+            // Mobile menu toggle (placeholder)
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle
+                    console.log('Mobile menu toggle clicked');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
